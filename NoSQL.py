@@ -22,10 +22,13 @@ collection = db["Patients"]
 
 #%% OLAP Connector
 
+username = input("Please enter your database username: ")
+password = input("Please enter your database password: ")
+
 try:
     conn_OLAP = mariadb.connect(
-        user="archie",
-        password="MTWmtw1992",
+        user=username,
+        password=password,
         host="127.0.0.1",
         port=3306,
         database="irradiationfacts")
