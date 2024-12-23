@@ -396,29 +396,29 @@ def IsValidDate(dateInQuestion):
     
     # Check the month is between 1 and 12
     month = int(dateInQuestion[4:6])
-    if month < 1 or month > 12:
+    if month < 1 or month >= 12:
         return False
     
     # Check the days is less than 32 and greater than 0
     day = int(dateInQuestion[6:8])
-    if day < 1 or day > 31:
+    if day < 1 or day >= 31:
         return False
     
     # If value is date time as well, check validity
     if len(dateInQuestion.value) == 18:
         # Hours must be between 0 and 23
         hours = int(dateInQuestion[8:10])
-        if hours < 0 or hours > 23:
+        if hours < 0 or hours >= 23:
             return False
         
         # Minutes between 00 and 59
         minutes = int(dateInQuestion[10:12])
-        if minutes < 0 or minutes > 59:
+        if minutes < 0 or minutes >= 59:
             return False
         
         # Seconds must be between 0 and 59.999
         seconds = float(dateInQuestion[12:])
-        if minutes < 0 or minutes > 59.999:
+        if seconds < 0 or seconds > 60:
             return False
     
     # If they havent activated any of the conditions, it is safe to say that they must be valid
